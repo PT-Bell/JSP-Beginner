@@ -1,0 +1,16 @@
+<!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api -->
+<dependency>
+    <groupId>jakarta.servlet.jsp.jstl</groupId>
+    <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+    <version>3.0.0</version>
+</dependency>
+<html>
+<head>
+<title>Directives Tag</title>
+</head>
+<body>
+	<c:forEach var="k" begin="1" end="10" step="1">
+		<c:out value="${k}" />
+	</c:forEach>
+</body>
+</html	>
