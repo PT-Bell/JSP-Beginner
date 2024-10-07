@@ -1,18 +1,46 @@
-<html>
+<%@ page contentType="text/html; charset=utf-8" %>
+<%@ page import="java.util.Date" %>
+<!DOCTYPE html>
 <head>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<title>Welcome </title>
+	<title>Welcome </title>
 </head>
 <body>
-	<div class="container py-4">
-		<header class="pb-3 mb-4 border-bottom">
-			<a href="./welcome.jsp" class="d-flex align-itmes-center text-dark text-decoration-none">
-			<svg width="32" height="32" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
-			<</svg>
-			</a>
-		</header>
+<div class="container py-4">
+	<%@ include file="menu.jsp" %>
+	
+<%! String greeting="Welcome to Book Shopping Mall";
+String tagline="Welcome to Web Market!"; %>
+
+	<div class="p-5 mb-4 bg-body-tertiary rounded-3">
+		<div class="container-fluid py-5">
+			<h1 class="display-5 fw-bold"><%=greeting %></h1>
+			<p class="col-md-8 fs-4">BookMarket</p>
+		</div>
 	</div>
-	<h1>Welcome to Book Shopping Mall</h1>
-	<h3>Welcome to Web Market!</h3>
+	<div class="row align-itmes-md-stretch text-center">
+		<div class="col-md-12">
+			<div class="h-100 p-5">
+				<h3><%=tagline  %></h3>
+				<%
+					Date day=new java.util.Date();
+					String am_pm;
+					int hour=day.getHours();
+					int minute=day.getMinutes();
+					int second=day.getSeconds();
+					if (hour / 12 == 0){
+						am_pm="AM";
+					} else {
+						am_pm="PM";
+						hour=hour - 12;
+					}
+					String CT = hour + ":" + minute + ":" + second + " " + am_pm;
+					out.println("현재 접속 시각: " + CT + "\n");
+				%>
+			</div>
+		</div>
+	</div>
+	<%@ include file="footer.jsp" %>
+</div>
 </body>	
 </html>	
