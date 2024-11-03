@@ -1,0 +1,10 @@
+## 파일 무시
+.classpath
+.project
+
+##다음과 같은 확장자는 전체 무시
+
+
+
+##폴더 무시
+.settings/
